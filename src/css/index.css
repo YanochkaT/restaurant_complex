@@ -1,0 +1,397 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background:
+        linear-gradient(180deg, 
+        rgba(255, 255, 255, 0.15) 0%, 
+        rgba(18, 18, 28, 0.00) 41.37%, 
+        rgba(38, 38, 58, 0.13) 87.31%, 
+        rgba(43, 43, 67, 0.15) 100%), 
+        linear-gradient(180deg, 
+        rgba(0, 0, 0, 0.00) 0%, 
+        rgba(38, 38, 58, 0.17) 87.31%, 
+        rgba(43, 43, 67, 0.20) 100%), 
+         #424242;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; 
+    background-repeat: no-repeat;
+}
+
+.content {
+  align-self: center;
+  width: 1440px;
+  margin: 0;
+  padding: 0;
+}
+
+
+.button_text {
+  background-color: transparent;
+  border: none;
+  color: #FFF;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+/* --------------------------------------HEADER--------------------------------------*/
+header {
+  width: 100%;
+  height: 100px;
+}
+.header_top_box {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 66px;
+    flex-shrink: 0;
+    background: #FFF;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+    float: left;
+    flex-direction: row;
+    justify-content: center;
+}
+.header_bottom_box {
+  display: flex;
+  width: 100%;
+  height: 72px;
+  flex-shrink: 0;
+  background: #6C757A;
+  box-shadow: 0px 4px 4px 0px 
+  rgba(0, 0, 0, 0.25);
+}
+.header_line {
+  width: 100%;
+  height: 4px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #D9D9D9;
+  margin-top: 8px;
+}
+.logo_container {
+    margin-right: 5px;
+    align-items: center;
+}
+.logo_container img {
+  height: 100%;
+}  
+
+.navigation {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+.navigation a {
+  margin: 0 12px;
+  color: #424242;
+  font-family: 'Nunito', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 0.04px;
+  text-transform: uppercase;
+}
+.profile_container {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+.profile_container button { 
+    display: flex;
+    width: 93px;
+    height: 24px;
+    
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    border: none;
+    border-radius: 8px ;
+    background: var(--yellow-button, linear-gradient(93deg, #FFB800 -47.72%, #FF8A00 136.81%));
+    box-shadow: 0px 5px 8px 0px rgba(222, 151, 0, 0.24);
+}
+
+
+/* --------------------------------------FOOTER--------------------------------------*/
+footer {
+    width: 100%;
+    height: 220px;
+    margin-top: 50%;
+    align-items: center;
+    padding: 20px 0;
+    bottom: 0;
+}
+.footer_bottom_box {
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+    background: #6C757A;
+
+    float: left; 
+    margin-top: 50px;
+    bottom: 0
+}
+.footer_top_box {
+    margin-top: 17px;
+    width: 100%;
+    height: 172px;
+    flex-shrink: 0;
+    margin-bottom: 0;
+    background: #424242;
+    box-shadow: 0px -4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.left_container{
+  width: 30%;
+  float: left;
+  margin-left: 70px;
+  margin-top: 50px;
+  text-align: left;
+}
+.right_container{
+  width: 30%;
+  margin-right: 50px;
+  margin-top: 50px;
+  float: right;
+}
+.subscribe_button{
+border: none;
+display: flex;
+width: 328px;
+height: 44px;
+padding: 21px 24px;
+justify-content: center;
+align-items: center;
+gap: 10px;
+flex-shrink: 0;
+border-radius: 8px;
+background: var(--yellow-button, linear-gradient(93deg, #FFB800 -47.72%, #FF8A00 136.81%));
+/* Button shadow ! */
+box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222, 151, 0, 0.24);
+}
+.footer_text{
+  font-size: 15px;
+  color: aliceblue;
+  font-family: 'Oswald', sans-serif;
+}
+
+
+/* --------------------------------------MAIN PAGE--------------------------------------*/
+.title{
+  font-size: 30px;
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-bottom: 15px;
+  color: aliceblue;
+  font-family: 'Oswald', sans-serif;
+}
+
+.main_baner{
+  width: 80%;
+  height: 350px;
+  margin-bottom: 15px;
+  margin-left: 170px;
+  border-radius: 15px;
+  background-size: cover;
+  background-image: url(C:\Users\Admin\Desktop\dw21batch4-sasi-42.png);
+}
+
+.big_conteiner{
+  width: 93%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 10px;
+  margin-left: 75px;
+}
+
+.categor_conteiner{
+  background-size: cover; 
+  display: flex;
+  align-items: flex-end;
+
+  width: 160px;
+  height: 102px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 3px solid #EDEEF2;
+  background: var(--neutral-white, #FFF);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.cat_text{
+  width: 100%;
+  height: 40%;
+  color: var(--neutral-gray-dark, #545563);
+  text-align: center;
+  font-family: Nunito, sans-serif;
+  font-size: 13px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; 
+  letter-spacing: 0.1px;
+
+  background-color: white;
+  border-radius: 15px;
+}
+
+.menulist1{
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+.menu_cont{
+  width: 350px;
+  height: 276px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 5px solid #EDEEF2;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.menu_photo{
+
+  width: 350px;
+  height: 160px;
+  flex-shrink: 0;
+  background: #D9D9D9;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  
+}
+.text_menu_list{
+  margin-left: 15px;
+  margin-top: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+}
+.price{
+  margin-left: 15px;
+  margin-top: 10px;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 20px;
+}
+.button_menu{
+  width: 180px;
+  height: 30px;
+  background: #F17228;
+  border-radius: 8px;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 160px;
+}
+
+.menulist2{
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-left: 25px;
+}
+
+
+
+/* --------------------------------------ABOUT PAGE--------------------------------------*/
+.about_container{
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 180px;
+}
+
+.about_item{
+margin-bottom: 15px;
+float: left;
+width: 1077px;
+height: 300px;
+flex-shrink: 0;
+border-radius: 16px;
+border: 5px solid #EDEEF2;
+background: #EDEEF2;
+box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+
+  /*
+  
+  url(C:\Users\Admin\Desktop\handrawn-barbecue-elements.jpg)
+     
+
+  -----------------------------Slider section styles
+  .slider {
+    background-color: #0099cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .slider h2 {
+    font-size: 28px;
+  }
+ 
+  .category-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  .category-box h3 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .element-box {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    margin: 20px;
+    padding: 10px;
+  }
+  
+  .element-box h4 {
+    font-size: 16px;
+    color: #333;
+  }
+ 
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer p {
+    font-size: 14px;
+  }
+  
+  */
+  
