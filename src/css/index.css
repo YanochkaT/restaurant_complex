@@ -28,9 +28,10 @@ body {
 
 .content {
   align-self: center;
-  width: 1440px;
   margin: 0;
+  width: 1440px;
   padding: 0;
+  padding-top: 85px;
 }
 
 
@@ -49,7 +50,8 @@ body {
 /* --------------------------------------HEADER--------------------------------------*/
 header {
   width: 100%;
-  height: 100px;
+  height: 70px;
+  position: fixed;
 }
 .header_top_box {
     display: flex;
@@ -86,6 +88,7 @@ header {
 }
 .logo_container img {
   height: 100%;
+  
 }  
 
 .navigation {
@@ -94,8 +97,17 @@ header {
   align-items: center;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
+
+.navigation li {
+  margin: 0 10px;
+  transition: transform 0.2s, text-shadow 0.2s; /* Apply the transition */
+  user-select: none;
+}
+
 .navigation a {
+  text-decoration: none;
   margin: 0 12px;
   color: #424242;
   font-family: 'Nunito', sans-serif;
@@ -105,7 +117,26 @@ header {
   line-height: normal;
   letter-spacing: 0.04px;
   text-transform: uppercase;
+  user-select: none;
+  transition: transform 0.2s, text-shadow 0.2s;
 }
+
+.navigation a:hover {
+  transform: scale(1.1); /* Increase the size on hover */
+  text-shadow: 4px 4px 10px rgba(255, 165, 0, 0.8); text-shadow: 2px 2px 5px rgba(255, 165, 0, 0.5);
+}
+
+.navigation li:hover {
+  transform: scale(1.1); /* Increase the size of the list item on hover */
+}
+
+.navigation a:active {
+  color: gray;
+  transform: scale(1.2); /* Increase the size on hover */
+  -webkit-text-stroke: 1px #424242;
+  text-shadow: 4px 4px 10px rgba(255, 165, 0, 0.8); text-shadow: 2px 2px 5px rgba(255, 165, 0, 0.5);
+}
+
 .profile_container {
     list-style: none;
     display: flex;
@@ -133,7 +164,6 @@ header {
 footer {
     width: 100%;
     height: 220px;
-    margin-top: 50%;
     align-items: center;
     padding: 20px 0;
     bottom: 0;
@@ -194,7 +224,7 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
 
 /* --------------------------------------MAIN PAGE--------------------------------------*/
 .title{
-  font-size: 30px;
+  font-size: 32px;
   margin-top: 10px;
   margin-left: 100px;
   margin-bottom: 15px;
@@ -205,28 +235,29 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
 .main_baner{
   width: 80%;
   height: 350px;
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   margin-left: 170px;
   border-radius: 15px;
   background-size: cover;
   background-image: url(C:\Users\Admin\Desktop\dw21batch4-sasi-42.png);
 }
 
-.big_conteiner{
-  width: 93%;
-  float: left;
+.categories_container{
+  width: 1110px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  margin-top: 10px;
-  margin-left: 75px;
+  margin-top: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 170px;
 }
-
-.categor_conteiner{
+/*
+.category_box {
   background-size: cover; 
   display: flex;
-  align-items: flex-end;
-
+  flex-direction: column;
+  margin: 10px;
+  margin-top: 0px;
   width: 160px;
   height: 102px;
   flex-shrink: 0;
@@ -235,10 +266,81 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
   background: var(--neutral-white, #FFF);
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
+*/
+.category_box {
+  background: none;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  margin-top: 0px;
+  width: 160px;
+  height: 102px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 3px solid lightgrey;
+  background: var(--neutral-white, #FFF);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
 
-.cat_text{
+/* Additional styles to make it look like a button */
+.category_box {
+  cursor: pointer; /* Change cursor to a pointer on hover */
+  transition: transform 0.2s; /* Add a transition for smooth animation */ 
+}
+
+.category_box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 40%;
+  height: 100%;
+  background: rgba(255, 0, 0, 0); /* Transparent color */
+  transition: background 0.3s; /* Add a transition for smooth effect */
+  pointer-events: none; /* Prevent the pseudo-element from blocking interactions */
+}
+
+
+/* Change button appearance on hover and click */
+.category_box:hover {
+  background: lightgrey; /* Change background color on hover */
+  color: #FFF; /* Change text color on hover */
+  border: 3px solid lightgray;
+  border-radius: 16px;
+  transform: scale(1.1); /* Scale the button to 110% on hover */
+}
+
+.category_box:hover::before {
+  border-radius: 16px;
+  background: rgba(128, 128, 128, 0.3); /* Colored layer (e.g., red with 60% opacity) */
+}
+
+
+
+.category_box:active {
+  background: orange; /* Change background color on click */
+  color: #FFF; /* Change text color on click */
+  border: 3px solid orange;
+  border-radius: 16px;
+}
+.category_box:active::before {
+  border-radius: 16px;
+  background: rgba(255, 165, 0, 0.3); /* Colored layer (e.g., red with 60% opacity) */
+}
+
+
+
+
+.image_category{
+  width: 100%;
+  height: 79px;
+  background-color: white;
+  border-radius: 16px;
+  display: block;
+}
+
+.text_category p{
   color: var(--neutral-gray-dark, #545563);
   text-align: center;
   font-family: Nunito, sans-serif;
@@ -247,11 +349,39 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
   font-weight: 700;
   line-height: 18px; 
   letter-spacing: 0.1px;
+  width: 155px;
+  margin-top: 2px;
 
-  background-color: white;
-  border-radius: 15px;
 }
 
+
+
+.menu_box{
+  width: 350px;
+  height: 276px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  border: 5px solid #EDEEF2;
+  background-color: white;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+}
+
+.menu_container{
+  margin-top: 20px;
+  margin-left: 200px;
+  display: flex;
+  flex-wrap: wrap;
+  /* Adjust the gap as needed */
+  justify-content: flex-start; /* Align items to the left */
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 10px;
+
+}
+
+
+/*
 .menulist1{
   width: 100%;
   float: left;
@@ -261,17 +391,9 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
   margin-top: 50px;
   margin-left: 25px;
 }
-.menu_cont{
-  width: 350px;
-  height: 276px;
-  flex-shrink: 0;
-  border-radius: 16px;
-  border: 5px solid #EDEEF2;
-  background-color: white;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-}
-.menu_photo{
+*/
 
+.menu_photo{
   width: 350px;
   height: 160px;
   flex-shrink: 0;
@@ -306,6 +428,8 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
   margin-left: 160px;
 }
 
+
+/*
 .menulist2{
   width: 100%;
   float: left;
@@ -315,6 +439,7 @@ box-shadow: 0px 14px 32px 0px rgba(255, 178, 14, 0.29), 0px 5px 8px 0px rgba(222
   margin-top: 50px;
   margin-left: 25px;
 }
+*/
 
 
 
@@ -338,6 +463,121 @@ border: 5px solid #EDEEF2;
 background: #EDEEF2;
 box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
 }
+
+
+
+.service_container{
+  width: 100%;
+  float: left;
+  display: flex;
+  flex-direction: column;
+  margin-left: 180px;
+}
+
+.service_item{
+margin-bottom: 15px;
+float: left;
+width: 1077px;
+height: 300px;
+flex-shrink: 0;
+border-radius: 16px;
+border: 5px solid #EDEEF2;
+background: #EDEEF2;
+box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+
+
+
+/* ZAMOVLENNYA PAGE--------------------------------------*/
+.left_zamovlennya{
+  width: 30%;
+  float: left;
+  margin-left: 70px;
+  text-align: left;
+}
+
+.right_zamovlennya{
+  width: 30%;
+  float: left;
+  margin-left: 70px;
+  text-align: right;
+}
+
+.zamovlennya_item_box{
+width: 570px;
+height: 113px;
+flex-shrink: 0;
+border-radius: 16px;
+border: 1.5px solid #C7C8D2;
+background: #FFF;
+margin: 6px;
+
+display: flex;
+flex-direction: row;
+}
+
+.zamovlennya_item_image{
+margin: 10px;
+height: 92px;
+width: 92px;
+flex-shrink: 0;
+border-radius: 11px;
+background: #D9D9D9;
+float: left;
+}
+
+.zamovlennya_item_content{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 92px;
+  width: 348px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  background: #FF8A00;
+  float: left;
+}
+
+
+.zamovlennya_item_other{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 92px;
+  width: 100px;
+  flex-shrink: 0;
+  border-radius: 11px;
+  float: left;
+}
+
+
+.zamovlennya_item_delete{
+width: 28px;
+height: 28px;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+float: right;
+
+border-radius: 2.5px;
+border: 1px solid #D9D9D9;
+background: #FFF;
+
+}
+
+.zamovlennya_item_quantity{
+width: 100px;
+height: 38.806px;
+flex-shrink: 0;
+border-radius: 2.5px;
+border: 1px solid #D9D9D9;
+background: #FFF;
+margin-top: 52px;
+}
+
+
+
+
 
 
 
