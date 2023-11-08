@@ -1,44 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Axios from 'axios';
 import MenuList from '../components/MenuList';
 import Categories from '../components/Categories';
 import '../css/index.css';
 
 const Main = () => {
-    return(
-        <main className='content'> 
+  const [menuData, setMenuData] = useState([]);
 
-        <p class="title">Головна</p>
-       
-        <div class="main_baner"></div>
+  useEffect(() => {
+    // Define the backend API URL
+    const backendApiUrl = 'http://localhost:3001/get'; // Replace with your actual backend URL
+alert("qwerty");
+    // Make a GET request to the backend API
+    Axios.get(backendApiUrl)
+      .then((response) => {
+        alert("qwerty111");
+        setMenuData(response.data);
+      })
+      .catch((error) => {
+        alert(error);
+        console.error('Error fetching data from the backend:', error);
+      });
+  }, []); // An empty dependency array triggers the effect on component mount
 
-        <p class="title">Категорії</p>
-
-        <div class="big_conteiner">
-            <Categories ctext1 = "Піцца"/>
+  return (
+    <main className='content'>
+      <p class="title">Головна</p>
+      <div class="main_baner"></div>
+      <p class="title">Категорії</p>
+      <div class="categories_container">
+      <Categories ctext1 = "Піца"/>
             <Categories ctext1 = "Бургери"/>
             <Categories ctext1 = "Салати"/>
             <Categories ctext1 = "Супи"/>
             <Categories ctext1 = "Суші"/>
             <Categories ctext1 = "Десерти"/>
-            <Categories ctext1 = "Інше"/>
-
-
-
-        </div>
-
-    <div className='menulist1'>
-        <MenuList text1 = "Royal Burger" text2 = "200 грн" />
-        <MenuList text1 = "Royal Pizza" text2 = "290 грн"/>
-        <MenuList text1 = "King Salat" text2 = "126 грн"/>
-    </div>
-    <div className='menulist2'>
-        <MenuList text1 = "Royal Pasta" text2 = "260 грн" />
-        <MenuList text1 = "Royal Fish" text2 = "500 грн"/>
-        <MenuList text1 = "Finlandia Vodka (0.7мл)" text2 = "450 грн"/>
-    </div>
-
+            <Categories ctext1 = "Напої"/>
+        {/* Add more categories */}
+      </div>
+      <div className='menu_container'>
+        {menuData.map((menuItem) => (
+          <MenuList key={menuItem.id} text1={menuItem.product_name} text2={menuItem.product_price} />
+        ))}
+      </div>
     </main>
-    )
-}
+  );
+};
 
 export default Main;
