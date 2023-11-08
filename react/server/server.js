@@ -11,7 +11,7 @@ const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: 'root',
-  database: 'restaurant_complex'
+  database: 'restaurant_complex1'
 });
 
 db.connect(err => {
@@ -26,7 +26,9 @@ db.connect(err => {
 // Define a route to get data from the "products" table
 app.get('/get', (req, res) => {
     console.log("results: 111"); 
-    const query = 'SELECT * FROM product'; // Replace "products" with your table name
+    const query = 'SELECT * FROM product'; // Replace "product" with your table name
+    
+
     console.log("results: s");  
     db.query(query, (err, results) => {
       if (err) {
