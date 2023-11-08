@@ -3,15 +3,16 @@ import '../css/index.css';
 
 const Categories = (props) => {
     return(
-        <div>
-            <div class="categor_conteiner">
-            <div class="photo_cont">
-                
+        <div className='category_button_container'>
+        <button className='category_box'>
+            <div class="image_category">
+
             </div>
-            <div class="cat_text">
-                <p class="pizza">{props.ctext1}</p>
-            </div>
-        </div>
+
+                <div class="text_category">
+             <p class="pizza">{props.ctext1}</p>
+                </div>    
+        </button>
         </div>
     )
 }
