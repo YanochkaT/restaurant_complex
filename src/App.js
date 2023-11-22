@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import Main from './Pages/Main';
 import Footer from './components/Footer';
 import './css/index.css'; 
 
@@ -8,10 +7,18 @@ import './css/index.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import About from './Pages/About'
 import Services from './Pages/Services'
+import Main from './Pages/Main';
+import ShopCart from './Pages/ShopCart';
+import Login from './Pages/Login';
+import Register from './Pages/Reg';
+import EmailVerification from './Pages/EmailVerification';
+
+
+
 
 function App() {
   return (
-    <Router>
+
       <div className="App">
       <Header />
      
@@ -19,31 +26,19 @@ function App() {
         <Route path='/main' element={<Main />} />
         <Route path="/about" element={<About />} />
         <Route path="/services" element={<Services />} />
+        <Route path="/ShopCart" element={<ShopCart />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/Register" element={<Register />} />
+        <Route path="/EmailVerification" element={<EmailVerification />} />
+
+        <Route path="/Register" element={<Register />} />
       </Routes>
   
 
       <Footer  />
       </div>
-    </Router>
+
   );
 }
 
 export default App;
-
-
-/*
-import React from 'react';
-import * as ReactDOMClient from "react-dom/client";
-import Header from './components/Header';
-
-
-function App() {
-  return (
-    <div className="App">
-      <Header title="My React App" />
-      {}
-   </div>
-  );
-}
-export default App;
-*/
